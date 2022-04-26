@@ -1,0 +1,31 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}  % Pour tous les langues
+\usepackage[british]{babel}  % Language identifier
+\usepackage{mathptmx}  % Times New Roman Equivalent
+
+% --- Pretty pictures ---
+\usepackage{graphicx}  % Permits png's, etc.
+\graphicspath{{./images/}}
+
+% --- Bibliographies ---
+\usepackage[backend=biber,style=apa,sorting=nty]{biblatex}  % Bibliography and citations
+\addbibresource{./references.bib}
+\nocite{*}
+
+\author{Team Watts}
+\title{Team Watts Report Title}
+\makeatletter
+\begin{document}
+  \pagenumbering{roman}
+  \input{mmai_titlepage}
+  \clearpage
+  \tableofcontents
+  \clearpage
+  \pagenumbering{arabic}
+  {\bfseries\Large\@title}
+  \input{mmai_report_body}
+  \clearpage
+  \printbibheading
+  \printbibliography[type=book,heading=subbibliography,title={Book Sources}]
+  \printbibliography[type=online,heading=subbibliography,title={Online Sources}]
+\end{document}

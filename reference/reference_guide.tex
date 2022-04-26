@@ -1,0 +1,83 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[official]{eurosym}
+\author{George Cummings}
+\title{\LaTeX Quick Reference Card}
+\begin{document}
+\pagenumbering{roman}
+\maketitle
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+\section{Paragraphs}
+\subsection{Paragraph Example 1}
+\ldots when Einstein introduced his formula
+\begin{equation}
+	e = m \cdot c^2 \; ,
+\end{equation}
+which is at the same time the most widely known and the
+least well understood physical formula. 
+\subsection{Paragraph Example 2}
+\ldots from which follows Kirchhoff's current law:
+\begin{equation}
+	\sum_{k=1}^{n} I_k = 0 \; .
+\end{equation}
+
+Kirchhoff's voltage law can be derived \ldots
+\subsection{MBoxes}
+MBoxes ensure that a block of text remains on the same line. For example,
+the telephone number here is wrapped in an\verb| \mbox{}|: \mbox{(450) 330-4742}. 
+\subsection{Ready-Made Strings}
+\textbackslash today = \today \\
+\textbackslash TeX = \TeX \\
+\textbackslash LaTeX = \LaTeX \\
+\textbackslash LaTeXe = \LaTeXe \\
+\section{Special Characters and Symbols}
+\subsection{Quotation Marks}
+\`{}\`{}Please press the \`{}any\'{} key. \'{}\'{} = ``Please press the `any' key.''
+\subsection{Dashes and Hyphens}
+daughter-in-law, X-rated = daughter-in-law, X-rated (hyphen)\\
+pages 13 - - 67 = pages 13--67 (en-dash)\\
+yes - - - or no? = yes---or no? (em-dash)\\
+\$0\$, \$1\$ and \$-1\$ = $0$, $1$ and $-1$ (minus) 
+\subsection{Tilde}
+\textbackslash\~{}\{\} gives a regular tilde: \~{} \\
+For the web, use \$\textbackslash sim\$: http://cummings-online.ca/$\sim$george
+\subsection{Slash between words}
+read\textbackslash slash write = read\slash write
+\subsection{Euros}
+\textbackslash usepackage[official]\{eurosym\} \\
+\textbackslash euro = \euro
+\subsection{Ellipsis}
+\textbackslash ldots = \ldots
+\subsection{Suppress Ligatures}
+ff, fi, fl, ffi: use f\textbackslash mbox\{\}l to get f\mbox{}l.
+\section{References}
+\subsection{Cross References}
+\subsubsection{Target}
+Use \textbackslash label\{\emph{identifier}\}. For example, a reference to this \label{examplelabel}
+subsection uses \textbackslash label\{examplelabel\}.
+\subsubsection{Cross Reference}
+Now we can refer to the previous target with \textbackslash ref\{examplelabel\} on page
+\textbackslash pageref\{examplelabel\}. For example, section \ref{examplelabel} on page
+\pageref{examplelabel}.
+\subsection{Footnotes}
+Really easy. Just append \textbackslash footer\{\emph{Reference Text}\} to the word being referred to. For example,
+``Foxes are not elephants''\footnote{Theodore Seuss, \emph{Horton Hears a Who}, p.12}.
+\section{Environments}
+\subsection{Verbatim}
+This would be important for programming, I suppose. \\
+\verb|\begin{verbatim}| \ldots \verb|\end{verbatim}| \\
+Example: \\
+\begin{verbatim}
+import os
+
+for i in 'thing whump fweep'.split():
+    with open(os.path.join(CURDIR, i), 'r') as fp:
+        fp.read()
+\end{verbatim}
+% Appendices --------------------------------------------
+\clearpage
+\appendix
+\section{Appendix Example}
+This is an example appendix.
+\end{document}
